@@ -1,7 +1,7 @@
 /**
  * 
  */
-package serHumano;
+package instanciar;
 
 /**
  * @author diego
@@ -9,13 +9,13 @@ package serHumano;
  */
 public class Pessoa {
 	
-	// os atributos da classe pessoa
-	String cor;
-	String sexo;
-	String raca;
-	String nome;
-	boolean viva;
-	boolean comer;
+	// uso da palavras de visibilidade dos atributos 
+	public String cor;
+	public String sexo;
+	private String raca;
+	private String nome;
+	private boolean viva;
+	private boolean comer;
 	
 	
 	// os metodos da classe pessoa, o que a pessoa pode fazer ou faz
@@ -47,15 +47,12 @@ public class Pessoa {
 		
 	}
 		
-	public void comer() {
+	protected void comer() {
 		this.comer = true;
 	}
 	
-	public void naoComer() {
+	protected void naoComer() {
 		this.comer = false;
 	}
 	
-	
-	
-
 }
