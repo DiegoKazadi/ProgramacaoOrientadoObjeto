@@ -3,6 +3,7 @@
  */
 package domain;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,9 +21,12 @@ public class ProdutoComValidade extends ProdutoDeVenda{
 		super(nome, preco);
 		
 	}
-	
-	SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	String data = formato.format(validade); 
+	public String converterData (String validade) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Date data = sdf.parse(validade);
+		return sdf.format(data);
+		
+	}
 	
 	public String getValidade() {
 		return validade;
@@ -36,11 +40,7 @@ public class ProdutoComValidade extends ProdutoDeVenda{
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-
-	@Override
-	public String toString() {
-		return String.format("-" + nome + "%.2f", preco + "- Validade até"  + validade);
-	}
+	
 	
 	public static void main(String[] args) {
 		
