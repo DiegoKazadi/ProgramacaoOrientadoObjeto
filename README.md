@@ -1,4 +1,4 @@
-# Programacao Orientado Objeto
+# Programacao Orientada Objeto
 
 ## Objetivo
 
